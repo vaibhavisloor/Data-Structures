@@ -7,6 +7,21 @@ class LinkedList:
     def __init__(self):
         self.head=None
 
+    def print_list(self):
+        temp=self.head
+
+        while(temp):
+            print(f"{temp.data} -> ",end="")
+            temp=temp.link
+        print("None")
+
+    def addFirst(self,val):
+        newNode = Node(val)
+        newNode.link = self.head
+        self.head=newNode    
+
+
+
 if __name__ == '__main__':
     list=LinkedList()
     node1=Node(10) 
@@ -16,12 +31,4 @@ if __name__ == '__main__':
     node1.link=node2
     node2.link=node3
 
-    def print_list():
-        temp=list.head
-
-        while(temp):
-            print(f"{temp.data} -> ",end="")
-            temp=temp.link
-        print("None")    
-
-    print_list()
+    list.print_list()
