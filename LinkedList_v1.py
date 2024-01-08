@@ -32,3 +32,7 @@ if __name__ == '__main__':
     node2.link=node3
 
     list.print_list()
+
+
+    list.addFirst(100)
+    list.print_list()
