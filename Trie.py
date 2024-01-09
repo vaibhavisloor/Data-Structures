@@ -16,11 +16,18 @@ class Trie:
             node = node.children[char]
         node.end_of_word = True
     
-    def search(self,word):
+    def search(self, word):
         node = self.root
-
-        for char in word:
+        for char in word:  # Iterate over the characters of the word
             if char not in node.children:
                 return False
             node = node.children[char]
         return node.end_of_word
+    
+    def starts_with(self, prefix):
+        node = self.root
+        for char in prefix:  # Iterate over the characters of the prefix
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return True
