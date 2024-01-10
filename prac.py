@@ -102,44 +102,81 @@ arr = [2,1,6,34,78,456,231,45,62]
 
 
 # Merge Sort
-def merge(arr,start,mid,end):
-    temp = [None] * (end - start + 1)
-    k=0
+# def merge(arr,start,mid,end):
+#     temp = [None] * (end - start + 1)
+#     k=0
 
-    i=start
-    j=mid+1
+#     i=start
+#     j=mid+1
 
-    while i<=mid and j<=end:
-        if arr[i] < arr[j]:
-            temp[k] = arr[i]
-            i+=1
+#     while i<=mid and j<=end:
+#         if arr[i] < arr[j]:
+#             temp[k] = arr[i]
+#             i+=1
+#         else:
+#             temp[k] = arr[j]
+#             j+=1
+#         k+=1
+
+#     while i<= mid:
+#         temp[k] = arr[i]
+#         i+=1
+#         k+=1
+
+#     while j<= end:
+#         temp[k] = arr[j]
+#         j+=1
+#         k+=1
+
+#     k=0
+
+#     for i in range(len(temp)):
+#         arr[start+i] = temp[i]
+
+# def merge_sort(arr,start,end):
+#     if start < end:
+#         mid = (start + end) // 2
+#         merge_sort(arr,start,mid)
+#         merge_sort(arr,mid + 1,end)
+#         merge(arr,start,mid,end)
+
+# arr=[23,21,34,32,22,37,1,91,19,12,10]
+# merge_sort(arr,0,len(arr)-1)
+# print(arr)
+
+# numbers = 37
+
+# binary = ''
+
+# while numbers >= 1:
+#     rem = numbers % 2
+#     numbers = numbers // 2
+#     binary+=str(rem) 
+
+# print(binary[::-1])
+
+# from itertools import permutations
+# s='abc'
+
+# a=permutations(s)
+
+# for perm in a:
+#     print(perm)
+
+
+def bs(start,end,key):
+    while start <end:
+        mid = (start+end)//2
+
+        if nums[mid] == key:
+            return mid
         else:
-            temp[k] = arr[j]
-            j+=1
-        k+=1
+            if nums[mid] > key:
+                end=mid-1
+            else:
+                start+=1
 
-    while i<= mid:
-        temp[k] = arr[i]
-        i+=1
-        k+=1
-
-    while j<= end:
-        temp[k] = arr[j]
-        j+=1
-        k+=1
-
-    k=0
-
-    for i in range(len(temp)):
-        arr[start+i] = temp[i]
-
-def merge_sort(arr,start,end):
-    if start < end:
-        mid = (start + end) // 2
-        merge_sort(arr,start,mid)
-        merge_sort(arr,mid + 1,end)
-        merge(arr,start,mid,end)
-
-arr=[23,21,34,32,22,37,1,91,19,12,10]
-merge_sort(arr,0,len(arr)-1)
-print(arr)
+    
+nums = [3,9,13,19,22,56,89,93]
+nums.sort()
+print(bs(0,len(nums)-1,22))

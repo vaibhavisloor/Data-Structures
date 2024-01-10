@@ -22,6 +22,3 @@ class Chain:
             while temp.next != None:
                 temp=temp.next
             temp.next = newNode
-                
-            
-        
