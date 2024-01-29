@@ -13,6 +13,13 @@ def insert(root,val):
         root.right = insert(root.right,val)
     return root
 
+def inorder(root):
+    if root == None:
+        return
+    inorder(root.left)
+    print(root.key,end=" ")
+    inorder(root.right)
+
 
 if __name__=='__main__':
     
@@ -21,3 +28,7 @@ if __name__=='__main__':
     root=insert(root,100)
     root=insert(root,50)
     root=insert(root,150)
+    root=insert(root,15)
+    root=insert(root,10)
+
+    inorder(root)
