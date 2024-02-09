@@ -31,3 +31,23 @@ class Trie:
                 return False
             node = node.children[char]
         return True
+    
+if __name__ == "__main__":
+    # Create a Trie instance
+    trie = Trie()
+
+    # Insert words into the Trie
+    trie.insert("cat")
+    trie.insert("car")
+    trie.insert("dog")
+    trie.insert("dart")
+
+    # Search for words
+    print(trie.search("cat"))    # Output: True
+    print(trie.search("can"))    # Output: False
+
+    # Check for prefixes
+    print(trie.starts_with("ca"))  # Output: True
+    print(trie.starts_with("do"))  # Output: True
+    print(trie.starts_with("dar")) # Output: True
+    print(trie.starts_with("dan")) # Output: False
