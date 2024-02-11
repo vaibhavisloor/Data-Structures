@@ -20,6 +20,42 @@ def inorder(root):
     print(root.key,end=" ")
     inorder(root.right)
 
+def search(root,val):
+    if root == None:
+        return False
+    if root.key == val:
+        return True
+    if root.key > val:
+        return search(root.left,val)
+    else:
+        return search(root.right,val)
+        
+def delete_node(root,val):
+    if root == None:
+        return None
+    
+    if root.key < val:
+        root.right=delete_node(root.right,val)
+    elif root.key > val:
+        root.left=delete_node(root.left,val)
+    else:
+        if root.left == None and root.right == None:
+            return None
+        elif root.left == None:
+            return root.right
+        elif root.right == None:
+            return root.left
+        else:
+            right_min = getRightMin(root.right)
+            root.key = right_min
+            root.right = delete_node(root.right,right_min)
+    return root        
+
+def getRightMin(root):
+    temp = root
+    while temp.left != None:
+        temp = temp.left
+    return temp.key    
 
 if __name__=='__main__':
     
@@ -30,5 +66,11 @@ if __name__=='__main__':
     root=insert(root,150)
     root=insert(root,15)
     root=insert(root,10)
+    
+    inorder(root)
 
+    print(search(root,20))
+    print(search(root,10))
+
+    delete_node(root,100)
     inorder(root)
