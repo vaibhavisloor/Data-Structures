@@ -43,7 +43,7 @@ class AdjList:
             
             print("None")
 
-    def addEdgeopt(sielf, src, dest):
+    def addEdgeopt(self, src, dest):
 
        newNode = AdjNode(dest)
 
