@@ -12,14 +12,14 @@ def insert(root,val):
     elif root.key < val:
         root.right = insert(root.right,val)
     return root
-
+ 
 def inorder(root):
     if root == None:
         return
     inorder(root.left)
     print(root.key,end=" ")
     inorder(root.right)
-
+ 
 def search(root,val):
     if root == None:
         return False
@@ -29,11 +29,11 @@ def search(root,val):
         return search(root.left,val)
     else:
         return search(root.right,val)
-        
+
 def delete_node(root,val):
     if root == None:
         return None
-    
+
     if root.key < val:
         root.right=delete_node(root.right,val)
     elif root.key > val:
@@ -50,8 +50,8 @@ def delete_node(root,val):
             root.key = right_min
             root.right = delete_node(root.right,right_min)
     return root        
-
-def getRightMin(root):
+ 
+def getRightMin(root): #Whenever a root has two children, the lowest value of the right subtree replaces it.
     temp = root
     while temp.left != None:
         temp = temp.left

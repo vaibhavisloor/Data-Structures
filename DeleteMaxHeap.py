@@ -1,0 +1,51 @@
+def DeleteMax(arr, size):
+    arr[0], arr[size] = arr[size], arr[0]
+    print("Max = ",arr[size])
+    arr.pop()
+    Heapify(arr, 0, len(arr)-1)
+
+def BuildHeap(arr, size):
+
+    i = int(size / 2)
+    
+    while i >= 0:
+        Heapify(arr,i,size)
+        i -= 1   
+
+
+def Heapify(arr, index, size):
+
+    left = 2 * index + 1
+    right = left + 1
+
+    max = index
+
+    if left <= size and arr[left] > arr[max]:
+        max = left
+    if right <= size and arr[right] > arr[max]:
+        max = right
+
+    if index != max:
+    
+        temp = arr[max]
+        arr[max] = arr[index]
+        arr[index] = temp
+
+        Heapify(arr,max,size)
+
+	
+arr = [10, 20, 40, 30, 80, 60, 50]
+
+print("The Array Elements Are:")
+for i in arr:
+    print(i, end=" ")
+
+print("\nConstructing Heap...")
+BuildHeap(arr, len(arr)-1)
+
+print("Deleting the Maximum element...")
+DeleteMax(arr, len(arr)-1)
+
+print("After Deletion:")
+for i in range(len(arr)):
+    print(arr[i], end=" ")
