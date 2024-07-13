@@ -4,7 +4,6 @@ class HashTable:
         self.table=[None]*self.size
         for i in range(self.size):
             self.table[i] = -1
-            i+=1
 
     def insert(self,num):
         key = num % self.size
@@ -41,3 +40,4 @@ class HashTable:
         return 1    
 HT=HashTable(5)
 
+print(HT.table)
