@@ -1,0 +1,14 @@
+Dynamic Programming:
+
+Longest Common Subsequence (LCS)
+Matrix Chain Multiplication
+0/1 Knapsack Problem
+Bellman-Ford Algorithm for shortest paths
+
+
+Divide and Conquer:
+
+Merge Sort
+Quick Sort
+Binary Search
+Karatsuba Algorithm for fast multiplication
