@@ -1,0 +1,28 @@
+arr=[9, 32, 86, 43, 50, 40, 39, 79, 22, 65, 21, 10, 28, 19, 52]
+
+def quickSort(arr,start,end):
+    if start>=end:
+        return
+
+    pivot=end
+    left=start
+    right=end-1
+
+    while True:
+        while left<=right and arr[left] < arr[pivot]:
+            left+=1
+        while left<=right and arr[right] >  arr[pivot]:
+            right-=1
+
+        if left< right:
+            arr[right],arr[left] = arr[left],arr[right]
+        else:
+            break
+    arr[left],arr[pivot]=arr[pivot],arr[left]
+
+    quickSort(arr,start,left-1)    
+    quickSort(arr,left+1,end)    
+
+
+quickSort(arr,0,len(arr)-1)
+print(arr)
