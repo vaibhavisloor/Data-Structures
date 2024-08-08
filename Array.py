@@ -21,3 +21,6 @@ print(list)
 
 list[2]=3
 print(list)
+
+print(list.pop())
+print(list)
