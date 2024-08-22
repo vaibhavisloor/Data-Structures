@@ -33,33 +33,33 @@ arr = [2,1,6,34,78,456,231,45,62]
 # heap_sort(len(arr))
 # print(arr)
 
-start=0
-end = len(arr) - 1
+# start=0
+# end = len(arr) - 1
 
-def quick_sort(start,end):
-    if start >= end:
-        return
+# def quick_sort(start,end):
+#     if start >= end:
+#         return
     
-    pivot=end
+#     pivot=end
 
-    left=start
-    right=end-1
+#     left=start
+#     right=end-1
 
-    while left<=right:
-        while left <= right and arr[left] < arr[pivot]:
-            left+=1
+#     while left<=right:
+#         while left <= right and arr[left] < arr[pivot]:
+#             left+=1
 
-        while left <= right and arr[right] > arr[pivot]:
-            right-=1
+#         while left <= right and arr[right] > arr[pivot]:
+#             right-=1
 
-        if left <= right :
-            arr[left],arr[right] = arr[right],arr[left]
-            left+=1
-            right-=1 
-    arr[left],arr[pivot] = arr[pivot],arr[left]
-    quick_sort(start,left-1)                
-    quick_sort(left+1,end)                
+#         if left <= right :
+#             arr[left],arr[right] = arr[right],arr[left]
+#             left+=1
+#             right-=1 
+#     arr[left],arr[pivot] = arr[pivot],arr[left]
+#     quick_sort(start,left-1)                
+#     quick_sort(left+1,end)                
 
 
-quick_sort(start,end)
-print(arr)
+# quick_sort(start,end)
+# print(arr)
