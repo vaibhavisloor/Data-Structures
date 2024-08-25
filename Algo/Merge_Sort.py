@@ -38,10 +38,12 @@ def merge(arr,start,mid,end):
             temp[k] = arr[j]
             j+=1
         k+=1
+
     while i<=mid:
         temp[k] = arr[i]
         i+=1
         k+=1
+
     while j<=end:
         temp[k] = arr[j]
         j+=1 
@@ -58,7 +60,7 @@ def merge_sort(arr,start,end):
         merge_sort(arr,start,mid)
         merge_sort(arr,mid+1,end)
         merge(arr,start,mid,end)
-
+        
 arr=[22,1,32,81,28,37,45,53]
 print(arr)
 merge_sort(arr,0,len(arr)-1)
