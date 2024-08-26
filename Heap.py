@@ -13,18 +13,15 @@ def Heapify(arr, index, size):
 
     max = index
 
-    if left <= size and arr[left] > arr[max]:
+    if left < size and arr[left] > arr[max]:
         max = left
 
-    if right <= size and arr[right] > arr[max]:
+    if right < size and arr[right] > arr[max]:
         max = right
 
     if index != max:
-        temp = arr[max]
-        arr[max] = arr[index]
-        arr[index] = temp
+        arr[max],arr[index] = arr[index],arr[max]
         Heapify(arr,max,size)
-    
 
 if __name__ == '__main__':
 	
