@@ -164,21 +164,30 @@ arr = [2,1,6,34,78,456,231,45,62]
 #     print(perm)
 
 
-def bs(start,end,key):
-    while start <end:
-        mid = (start+end)//2
+# def bs(start,end,key):
+#     while start <end:
+#         mid = (start+end)//2
 
-        if nums[mid] == key:
-            return mid
-        else:
-            if nums[mid] > key:
-                end=mid-1
-            else:
-                start+=1
+#         if nums[mid] == key:
+#             return mid
+#         else:
+#             if nums[mid] > key:
+#                 end=mid-1
+#             else:
+#                 start+=1
 
     
-nums = [3,89,19,13,22,56,9,93]
-nums.sort()
-print(nums)
-print(bs(0,len(nums)-1,22))
+# nums = [3,89,19,13,22,56,9,93]
+# nums.sort()
+# print(nums)
+# print(bs(0,len(nums)-1,22))
 
+def fib(n):
+    fib=[-1]*(n+1)
+    fib[0] = 0
+    fib[1]=1
+
+    for i in range(2,n+1):
+        fib[i] = fib[i-2] + fib[i-1]
+    print(fib[n-1])
+fib(5)
