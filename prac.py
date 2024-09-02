@@ -182,12 +182,23 @@ arr = [2,1,6,34,78,456,231,45,62]
 # print(nums)
 # print(bs(0,len(nums)-1,22))
 
-def fib(n):
-    fib=[-1]*(n+1)
-    fib[0] = 0
-    fib[1]=1
+# def fib(n):
+#     fib=[-1]*(n+1)
+#     fib[0] = 0
+#     fib[1]=1
 
-    for i in range(2,n+1):
-        fib[i] = fib[i-2] + fib[i-1]
-    print(fib[n-1])
-fib(5)
+#     for i in range(2,n+1):
+#         fib[i] = fib[i-2] + fib[i-1]
+#     print(fib[n-1])
+# fib(5)
+
+
+def fib(n):
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+print(fib(5))
