@@ -193,12 +193,28 @@ arr = [2,1,6,34,78,456,231,45,62]
 # fib(5)
 
 
-def fib(n):
-    if n==0:
-        return 0
-    if n==1:
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
+# def fib(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     else:
+#         return fib(n-1) + fib(n-2)
 
-print(fib(5))
+# print(fib(5))
+
+
+# Happy Number
+
+seen = set()
+def happy_number(n):
+    global seen
+    num = sum(int(i)**2 for i in str(n))
+    if num == 1:
+        return True
+    elif num in seen:
+        return False
+    else:
+        seen.add(num)
+    return happy_number(num)
+print(happy_number(13))
