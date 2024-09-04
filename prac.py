@@ -206,15 +206,44 @@ arr = [2,1,6,34,78,456,231,45,62]
 
 # Happy Number
 
-seen = set()
-def happy_number(n):
-    global seen
-    num = sum(int(i)**2 for i in str(n))
-    if num == 1:
-        return True
-    elif num in seen:
-        return False
-    else:
-        seen.add(num)
-    return happy_number(num)
-print(happy_number(13))
+# seen = set()
+# def happy_number(n):
+#     global seen
+#     num = sum(int(i)**2 for i in str(n))
+#     if num == 1:
+#         return True
+#     elif num in seen:
+#         return False
+#     else:
+#         seen.add(num)
+#     return happy_number(num)
+# print(happy_number(13))
+
+
+# Max Heap
+
+def build_heap(arr,size):
+    i = int(len(arr)/2)
+    while i>=0:
+        heapify(arr,i,size)
+        i-=1
+
+def heapify(arr,index,size):
+    left = 2 * index + 1
+    right = left + 1
+
+    max=index
+
+    if left < size and arr[left] > arr[max]:
+        max = left
+    if right < size and arr[right] > arr[max]:
+        max=right
+    
+    if index!=max:
+        arr[max],arr[index] = arr[index],arr[max]
+        heapify(arr,max,size)
+
+arr=[23,13,21,32,34,52,12,33]
+print(arr)
+build_heap(arr,len(arr))
+print(arr)
