@@ -222,28 +222,42 @@ arr = [2,1,6,34,78,456,231,45,62]
 
 # Max Heap
 
-def build_heap(arr,size):
-    i = int(len(arr)/2)
-    while i>=0:
-        heapify(arr,i,size)
-        i-=1
+# def build_heap(arr,size):
+#     index=size//2 - 1
+#     while index >=0:
+#         heapify(arr,index,size)
+#         index-=1
+# def heapify(arr,index,size):
+#     left =  2 * index + 1
+#     right = left + 1
 
-def heapify(arr,index,size):
-    left = 2 * index + 1
-    right = left + 1
+#     max = index
 
-    max=index
-
-    if left < size and arr[left] > arr[max]:
-        max = left
-    if right < size and arr[right] > arr[max]:
-        max=right
+#     if left < size and arr[left] > arr[max]:
+#         max = left
+#     if right < size and arr[right] > arr[max]:
+#         max = right
     
-    if index!=max:
-        arr[max],arr[index] = arr[index],arr[max]
-        heapify(arr,max,size)
+#     if max != index:
+#         arr[ max], arr[index] = arr[ index], arr[max]
+#         heapify(arr, max,size)
+# arr = [10, 20, 40, 30, 80, 60, 50]
+# print( arr)
+# build_heap(arr, len(arr))
+# print( arr)
 
-arr=[23,13,21,32,34,52,12,33]
-print(arr)
-build_heap(arr,len(arr))
-print(arr)
+
+N=10
+memo=[None]*(N+1)
+
+def fib(n,memo):
+    if n<=1:
+        return 1
+
+    if memo[n] is not None:
+        return memo[n]
+    else:
+        memo[n] = fib(n-1,memo) + fib(n-2,memo)
+    return memo[n]
+    
+print(fib(5,memo))
