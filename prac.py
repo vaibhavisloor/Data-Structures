@@ -276,3 +276,11 @@ n=len(sample_array)
 #             sample_array[i],sample_array[j] = sample_array[j],sample_array[i]
 # print(sample_array)
 
+
+# Bubble Sort
+
+for i in range(n-1):
+    for j in range(n-1-i):
+        if sample_array[j] > sample_array[j+1] :
+            sample_array[j],sample_array[j+1] = sample_array[j+1],sample_array[j]
+print(sample_array)
