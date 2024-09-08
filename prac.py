@@ -280,7 +280,14 @@ n=len(sample_array)
 # Bubble Sort
 
 for i in range(n-1):
+    swap = False
     for j in range(n-1-i):
         if sample_array[j] > sample_array[j+1] :
             sample_array[j],sample_array[j+1] = sample_array[j+1],sample_array[j]
+            swap = True
+    
+    if swap == False:
+        break
 print(sample_array)
+
+
