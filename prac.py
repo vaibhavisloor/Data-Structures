@@ -294,28 +294,56 @@ n=len(sample_array)
 
 # Max Heap
 
-def build_heap(arr):
-    index = len(arr) // 2 - 1
-    while index >= 0:
-        heapify(arr,index,len(arr))
-        index -= 1
+# def build_heap(arr):
+#     index = len(arr) // 2 - 1
+#     while index >= 0:
+#         heapify(arr,index,len(arr))
+#         index -= 1
 
-def heapify(arr,index,size):
-    left = 2 * index + 1
-    right = left + 1
+# def heapify(arr,index,size):
+#     left = 2 * index + 1
+#     right = left + 1
 
-    max = index
+#     max = index
 
-    if left < size and arr[left] > arr[max]:
-        max = left
-    if right < size and arr[right] > arr[max]:
-        max = right
+#     if left < size and arr[left] > arr[max]:
+#         max = left
+#     if right < size and arr[right] > arr[max]:
+#         max = right
 
-    if index != max:
-        arr[max],arr[index] = arr[index],arr[max]
-        heapify(arr,max,size)
+#     if index != max:
+#         arr[max],arr[index] = arr[index],arr[max]
+#         heapify(arr,max,size)
 
-build_heap(sample_array)
-print(sample_array)
+# build_heap(sample_array)
+# print(sample_array)
+
+
+# Min Heap
+
+# def build_heap(arr):
+#     index = len(arr) // 2 - 1
+#     while index >= 0:
+#         heapify(arr,index,len(arr))
+#         index -= 1
+
+# def heapify(arr,index,size):
+#     left = 2 * index + 1
+#     right = left + 1
+
+#     max = index
+
+#     if left < size and arr[left] < arr[max]:
+#         max = left
+#     if right < size and arr[right] < arr[max]:
+#         max = right
+
+#     if index != max:
+#         arr[max],arr[index] = arr[index],arr[max]
+#         heapify(arr,max,size)
+
+# build_heap(sample_array)
+# print(sample_array)
+
 
 
