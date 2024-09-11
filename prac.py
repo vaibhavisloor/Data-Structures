@@ -348,37 +348,61 @@ n=len(sample_array)
 # Heap Sort
 
 # Max Heap
-final_array=[]
-def build_heap(arr,size):
-    index = len(arr) // 2 - 1
-    while index >= 0:
-        heapify(arr,index,size)
-        index -= 1
+# final_array=[]
+# def build_heap(arr,size):
+#     index = len(arr) // 2 - 1
+#     while index >= 0:
+#         heapify(arr,index,size)
+#         index -= 1
 
-def heapify(arr,index,size):
-    left = 2 * index + 1
-    right = left + 1
+# def heapify(arr,index,size):
+#     left = 2 * index + 1
+#     right = left + 1
 
-    max = index
+#     max = index
 
-    if left < size and arr[left] > arr[max]:
-        max = left
-    if right < size and arr[right] > arr[max]:
-        max = right
+#     if left < size and arr[left] > arr[max]:
+#         max = left
+#     if right < size and arr[right] > arr[max]:
+#         max = right
 
-    if index != max:
-        arr[max],arr[index] = arr[index],arr[max]
-        heapify(arr,max,size)
-def heap_sort(arr,size):
-    build_heap(arr,size)
+#     if index != max:
+#         arr[max],arr[index] = arr[index],arr[max]
+#         heapify(arr,max,size)
+# def heap_sort(arr,size):
+#     build_heap(arr,size)
 
-    while size > 0:
-        arr[0],arr[size] = arr[size],arr[0]
-        size-=1
-        heapify(arr,0,size)
+#     while size > 0:
+#         arr[0],arr[size] = arr[size],arr[0]
+#         size-=1
+#         heapify(arr,0,size)
 
 
-heap_sort(sample_array,len(sample_array)-1)
+# heap_sort(sample_array,len(sample_array)-1)
+# print(sample_array)
+
+def quick_sort(arr,start,end):
+    if start >= end:
+        return
+    
+    left = start
+    pivot = end
+    right = end - 1
+
+    while True:
+        while left <= right and arr[left] < arr[pivot]:
+            left +=1
+        while left <= right and arr[right] > arr[pivot]:
+            right-=1
+
+        if left < right:
+            arr[left],arr[right] = arr[right],arr[left]
+        else:
+            break
+    arr[left], arr[pivot] = arr[pivot], arr[left]
+
+    quick_sort(arr,start,left-1)
+    quick_sort(arr,left+1,end)
+
+quick_sort(sample_array,0,len(sample_array)-1)
 print(sample_array)
-
-
