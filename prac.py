@@ -345,5 +345,40 @@ n=len(sample_array)
 # build_heap(sample_array)
 # print(sample_array)
 
+# Heap Sort
+
+# Max Heap
+final_array=[]
+def build_heap(arr,size):
+    index = len(arr) // 2 - 1
+    while index >= 0:
+        heapify(arr,index,size)
+        index -= 1
+
+def heapify(arr,index,size):
+    left = 2 * index + 1
+    right = left + 1
+
+    max = index
+
+    if left < size and arr[left] > arr[max]:
+        max = left
+    if right < size and arr[right] > arr[max]:
+        max = right
+
+    if index != max:
+        arr[max],arr[index] = arr[index],arr[max]
+        heapify(arr,max,size)
+def heap_sort(arr,size):
+    build_heap(arr,size)
+
+    while size > 0:
+        arr[0],arr[size] = arr[size],arr[0]
+        size-=1
+        heapify(arr,0,size)
+
+
+heap_sort(sample_array,len(sample_array)-1)
+print(sample_array)
 
 
