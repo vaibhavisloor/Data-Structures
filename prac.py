@@ -63,3 +63,83 @@ arr = [2,1,6,34,78,456,231,45,62]
 
 # quick_sort(start,end)
 # print(arr)
+
+
+# def fib(num):
+#     if num == 0:
+#         return 0
+#     elif num == 1:
+#         return 1
+#     return fib(num-1) + fib(num-2)
+
+# print(fib(7))
+
+# def fib(index):
+#     fib = [None] * (index + 1)
+#     fib[0] = 0
+#     fib[1] = 1
+
+#     for i in range(2,index + 1):
+#         fib[i] = fib[i-2] + fib[i-1]
+#     return fib[index]   
+
+# print(fib(5))
+
+# N=10
+# memo = [None] * (N + 1)
+
+# def fib(index,memo):
+#     if index <= 1:
+#         return index
+#     elif memo[index] != None:
+#         return memo[index]
+#     else:
+#         memo[index] = fib(index-1,memo) + fib(index-2,memo)
+#     return memo[index]
+
+# print(fib(N,memo))
+# print(memo)
+
+
+# Merge Sort
+def merge(arr,start,mid,end):
+    temp = [None] * (end - start + 1)
+    k=0
+
+    i=start
+    j=mid+1
+
+    while i<=mid and j<=end:
+        if arr[i] < arr[j]:
+            temp[k] = arr[i]
+            i+=1
+        else:
+            temp[k] = arr[j]
+            j+=1
+        k+=1
+
+    while i<= mid:
+        temp[k] = arr[i]
+        i+=1
+        k+=1
+
+    while j<= end:
+        temp[k] = arr[j]
+        j+=1
+        k+=1
+
+    k=0
+
+    for i in range(len(temp)):
+        arr[start+i] = temp[i]
+
+def merge_sort(arr,start,end):
+    if start < end:
+        mid = (start + end) // 2
+        merge_sort(arr,start,mid)
+        merge_sort(arr,mid + 1,end)
+        merge(arr,start,mid,end)
+
+arr=[23,21,34,32,22,37,1,91,19,12,10]
+merge_sort(arr,0,len(arr)-1)
+print(arr)
