@@ -177,6 +177,8 @@ def bs(start,end,key):
                 start+=1
 
     
-nums = [3,9,13,19,22,56,89,93]
+nums = [3,89,19,13,22,56,9,93]
 nums.sort()
+print(nums)
 print(bs(0,len(nums)-1,22))
+
