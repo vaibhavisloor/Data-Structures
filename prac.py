@@ -247,17 +247,32 @@ arr = [2,1,6,34,78,456,231,45,62]
 # print( arr)
 
 
-N=10
-memo=[None]*(N+1)
+# N=10
+# memo=[None]*(N+1)
 
-def fib(n,memo):
-    if n<=1:
-        return 1
+# def fib(n,memo):
+#     if n<=1:
+#         return 1
 
-    if memo[n] is not None:
-        return memo[n]
-    else:
-        memo[n] = fib(n-1,memo) + fib(n-2,memo)
-    return memo[n]
+#     if memo[n] is not None:
+#         return memo[n]
+#     else:
+#         memo[n] = fib(n-1,memo) + fib(n-2,memo)
+#     return memo[n]
     
-print(fib(5,memo))
+# print(fib(5,memo))
+
+
+
+
+sample_array = [5, 12, 7, 3, 9, 15, 8, 21, 4, 10]
+print(sample_array)
+n=len(sample_array)
+
+# Selection Sort
+# for i in range(n):
+#     for j in range(i+1,n):
+#         if sample_array[i] > sample_array[j]:
+#             sample_array[i],sample_array[j] = sample_array[j],sample_array[i]
+# print(sample_array)
+
