@@ -10,3 +10,10 @@ class Stack:
             self.array[top] = data
         else:
             print("Stack is full")
+    
+    def pop(self):
+        if self.top == -1:
+            print("Stack is empty")
+        else:
+            print(f"The popped element is {self.array[self.top]}")
+            top-=1
