@@ -5,9 +5,9 @@ class Stack:
         self.size = size
     
     def push(self,data):
-        top+=1
-        if top < self.size:
-            self.array[top] = data
+        self.top+=1
+        if self.top < self.size:
+            self.array[self.top] = data
         else:
             print("Stack is full")
     
