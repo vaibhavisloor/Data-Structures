@@ -5,8 +5,8 @@ class Stack:
         self.size = size
     
     def push(self,data):
-        self.top+=1
-        if self.top < self.size:
+        if self.top + 1 < self.size:
+            self.top += 1
             self.array[self.top] = data
         else:
             print("Stack is full")
@@ -16,4 +16,20 @@ class Stack:
             print("Stack is empty")
         else:
             print(f"The popped element is {self.array[self.top]}")
-            top-=1
+            self.top-=1
+
+if __name__ == "__main__":
+    s = Stack(5)
+    s.push(10)
+    s.push(20)
+    s.push(30)
+    s.push(40)
+    s.push(50)
+    s.push(60)
+    s.pop()
+    s.pop()
+    s.pop()
+    s.pop()
+    s.pop()
+    s.pop()
+    s.pop()
