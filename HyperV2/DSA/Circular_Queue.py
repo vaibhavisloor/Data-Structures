@@ -15,3 +15,11 @@ class Queue:
 
                 if self.front == -1:
                     self.front = 0
+                    
+        def deque(self):
+            if self.front == self.rear: 
+                print("Queue is empty")
+            else:
+                print(f"The value {self.array[self.front]} is dequeued")
+                self.array[self.front] = None
+                self.front = (self.front + 1) % self.size
