@@ -11,3 +11,11 @@ class Queue:
             self.rear += 1
         else:
             print("Queue is full")
+    
+    def dequeue(self):
+        if self.front == self.rear:
+            print("Queue is empty")
+        else:
+            print(f"The value {self.array[self.front]} is dequeued")
+            self.array[self.front] = None
+            self.front += 1
