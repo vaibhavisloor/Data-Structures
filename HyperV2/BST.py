@@ -13,3 +13,10 @@ def insert(root,val):
         root.left = insert(root.left,val)
     return root
 
+def inorder(root):
+    if root == None:
+        return 
+    inorder(root.left)
+    print(root.data)
+    inorder(root.right)
+
