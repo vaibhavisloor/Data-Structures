@@ -20,3 +20,14 @@ def inorder(root):
     print(root.data)
     inorder(root.right)
 
+def search(root,val):
+    if root is None:
+        return 0
+    if root.data == val:
+        return 1
+    elif root.data > val:
+        return search(root.left,val)
+    elif root.data < val:
+        return search(root.right,val)
+        
+    
