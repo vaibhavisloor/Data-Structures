@@ -31,3 +31,20 @@ def search(root,val):
         return search(root.right,val)
         
     
+if __name__ == '__main__':
+    root = None
+
+    root=insert(root,10)
+    root=insert(root,5)
+    root=insert(root,90)
+    root=insert(root,45)
+    root=insert(root,30)
+    root=insert(root,1)
+
+
+    inorder(root)
+
+    print(search(root,59))
+    print(search(root,90))
+    print(search(root,30))
+
