@@ -1,4 +1,4 @@
-arr = [2,1,6,34,78,456,231,45,62]
+# arr = [2,1,6,34,78,456,231,45,62]
 
 # def heap_sort(size):
 #     build_heap(arr,len(arr))
@@ -265,9 +265,9 @@ arr = [2,1,6,34,78,456,231,45,62]
 
 
 
-sample_array = [5, 12, 7, 3, 9, 15, 8, 21, 4, 10]
-print(sample_array)
-n=len(sample_array)
+# sample_array = [5, 12, 7, 3, 9, 15, 8, 21, 4, 10]
+# print(sample_array)
+# n=len(sample_array)
 
 # Selection Sort
 # for i in range(n):
@@ -381,28 +381,145 @@ n=len(sample_array)
 # heap_sort(sample_array,len(sample_array)-1)
 # print(sample_array)
 
-def quick_sort(arr,start,end):
-    if start >= end:
-        return
+# def quick_sort(arr,start,end):
+#     if start >= end:
+#         return
     
-    left = start
-    pivot = end
-    right = end - 1
+#     left = start
+#     pivot = end
+#     right = end - 1
 
-    while True:
-        while left <= right and arr[left] < arr[pivot]:
-            left +=1
-        while left <= right and arr[right] > arr[pivot]:
-            right-=1
+#     while True:
+#         while left <= right and arr[left] < arr[pivot]:
+#             left +=1
+#         while left <= right and arr[right] > arr[pivot]:
+#             right-=1
 
-        if left < right:
-            arr[left],arr[right] = arr[right],arr[left]
+#         if left < right:
+#             arr[left],arr[right] = arr[right],arr[left]
+#         else:
+#             break
+#     arr[left], arr[pivot] = arr[pivot], arr[left]
+
+#     quick_sort(arr,start,left-1)
+#     quick_sort(arr,left+1,end)
+
+# quick_sort(sample_array,0,len(sample_array)-1)
+# print(sample_array)
+
+
+# class Node:
+#     def __init__(self,val):
+#         self.val = val
+#         self.next = None
+
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+    
+#     def add_first(self,val):
+#         if self.head is None:
+#             self.head = Node(val)
+#         else:
+#             newNode = Node(val)
+#             newNode.next = self.head
+#             self.head = newNode
+    
+#     def add_last(self,val):
+#         if self.head is None:
+#             self.head = Node(val)
+#         else:
+#             temp = self.head
+#             while temp.next != None:
+#                 temp =temp.next
+
+#             temp.next = Node(val)
+    
+#     def delete(self,val):
+#         if not self.head:
+#             return "Empty List"
+#         elif self.head.val == val:
+#             self.head = self.head.next
+#             return f"{val} has been deleted"
+#         else:
+#             temp = self.head
+#             while temp.next != None:
+#                 if temp.next.val == val:
+#                     temp.next = temp.next.next
+#                     return f"{val} has been deleted"
+#                 temp=temp.next
+#             return "Value not found"
+
+#     def search(self,val):
+#         if not self.head:
+#             return "Empty List"
+#         else:
+#             temp = self.head
+#             while temp != None:
+#                 if temp.val == val:
+#                     return(f"Found {val}")
+#                 temp = temp.next
+#             return("Not Found")
+        
+#     def print(self):
+#         if self.head is None:
+#             return "Empty List"
+#         else:
+#             temp=self.head
+#             while temp != None:
+#                 print(temp.val, end=" ")
+#                 temp = temp.next
+            
+# LL = LinkedList()
+
+# LL.add_first(10)
+# LL.add_first(20)
+# LL.add_first(30)
+# LL.add_first(40)
+# LL.add_first(50)
+# LL.add_first(60)
+# LL.add_last(100)
+# LL.delete(10)
+# LL.print()
+# print(LL.search(40))
+
+
+class Stack:
+    def __init__(self,size):
+        self.size = size
+        self.top=-1
+        self.array=[None] * size
+    
+    def add(self,val):
+        if self.top + 1 < self.size:
+            self.top +=1
+            self.array[self.top] = val
+            print(f"Appended to stack - {val}")
         else:
-            break
-    arr[left], arr[pivot] = arr[pivot], arr[left]
+            print("Stack is full")
 
-    quick_sort(arr,start,left-1)
-    quick_sort(arr,left+1,end)
+    def remove(self):
+        if self.top != -1:
+            print(f"Popped {self.array[-1]}")
+            self.array.pop()
+            self.top-=1
+        else:
+            print("Stack is empty")
+    
+    def show(self):
+        print(self.array)
 
-quick_sort(sample_array,0,len(sample_array)-1)
-print(sample_array)
+S = Stack(5)
+S.add(1)
+S.add(2)
+S.add(3)
+S.add(4)
+S.add(5)
+S.add(6)
+
+S.remove()
+S.remove()
+S.remove()
+S.remove()
+S.remove()
+S.remove()
