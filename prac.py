@@ -484,42 +484,56 @@
 # print(LL.search(40))
 
 
-class Stack:
+
+class Queue:
     def __init__(self,size):
         self.size = size
-        self.top=-1
+        self.front=-1
+        self.rear=-1
         self.array=[None] * size
-    
-    def add(self,val):
-        if self.top + 1 < self.size:
-            self.top +=1
-            self.array[self.top] = val
-            print(f"Appended to stack - {val}")
+
+    def add_to_queue(self,val):
+        if self.rear == -1:
+            self.rear=0
+            self.front=0
+
+            self.array[self.rear] = val
+
+        elif self.rear + 1 < self.size:
+            self.rear+=1
+            self.array[self.rear] = val
         else:
-            print("Stack is full")
-
-    def remove(self):
-        if self.top != -1:
-            print(f"Popped {self.array[-1]}")
-            self.array.pop()
-            self.top-=1
-        else:
-            print("Stack is empty")
+            print("Queue is full")
     
-    def show(self):
-        print(self.array)
+    def remove_element(self):
+        if self.front == -1:
+            print("Queue is empty")
+        elif self.front < self.rear:
+            print(f"{self.array[self.front]} is removed.")
+            self.array[self.front] = None
+            self.front+=1
+        elif self.front==self.rear:
+            print(f"{self.array[self.front]} is removed.")
+            print("Queue is empty")
+            self.front = -1
+            self.rear = -1
+            
 
-S = Stack(5)
-S.add(1)
-S.add(2)
-S.add(3)
-S.add(4)
-S.add(5)
-S.add(6)
+    def print_queue(self):
+        return(self.array[self.front:self.rear+1])
 
-S.remove()
-S.remove()
-S.remove()
-S.remove()
-S.remove()
-S.remove()
+q=Queue(5)
+
+q.add_to_queue(10)
+q.add_to_queue(20)
+q.add_to_queue(30)
+q.add_to_queue(40)
+q.add_to_queue(50)
+q.add_to_queue(60)
+q.add_to_queue(70)
+print(q.print_queue())
+q.remove_element()
+print(q.print_queue())
+q.remove_element()
+print(q.print_queue())
+# q.add_to_queue(10)
