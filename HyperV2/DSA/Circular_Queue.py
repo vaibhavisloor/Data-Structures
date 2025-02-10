@@ -5,24 +5,24 @@ class Queue:
         self.rear = -1
         self.size = size
 
-        def enqueue(self, val):
-            if (self.rear + 1) % self.size == self.front:  
-                print("Queue is full")
-            else:
-                self.rear = (self.rear + 1) % self.size  
-                self.array[self.rear] = val
-                print(f"The value {val} has been appended")
+    def enqueue(self, val):
+        if (self.rear + 1) % self.size == self.front:  
+            print("Queue is full")
+        else:
+            self.rear = (self.rear + 1) % self.size  
+            self.array[self.rear] = val
+            print(f"The value {val} has been appended")
 
-                if self.front == -1:
-                    self.front = 0
+            if self.front == -1:
+                self.front = 0
 
-        def deque(self):
-            if self.front == self.rear: 
-                print("Queue is empty")
-            else:
-                print(f"The value {self.array[self.front]} is dequeued")
-                self.array[self.front] = None
-                self.front = (self.front + 1) % self.size
+    def deque(self):
+        if self.front == self.rear: 
+            print("Queue is empty")
+        else:
+            print(f"The value {self.array[self.front]} is dequeued")
+            self.array[self.front] = None
+            self.front = (self.front + 1) % self.size
 
 if __name__ == "__main__":
     q = Queue(5)  

@@ -35,6 +35,7 @@ class LinkedList:
             while temp.next.data != data:
                 temp = temp.next
             temp.next = temp.next.next
+            
     def search(self,data):
         temp = self.head
 
