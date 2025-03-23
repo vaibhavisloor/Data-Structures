@@ -485,55 +485,64 @@
 
 
 
+# class Queue:
+#     def __init__(self,size):
+#         self.size = size
+#         self.front=-1
+#         self.rear=-1
+#         self.array=[None] * size
+
+#     def add_to_queue(self,val):
+#         if self.rear == -1:
+#             self.rear=0
+#             self.front=0
+
+#             self.array[self.rear] = val
+
+#         elif self.rear + 1 < self.size:
+#             self.rear+=1
+#             self.array[self.rear] = val
+#         else:
+#             print("Queue is full")
+    
+#     def remove_element(self):
+#         if self.front == -1:
+#             print("Queue is empty")
+#         elif self.front < self.rear:
+#             print(f"{self.array[self.front]} is removed.")
+#             self.array[self.front] = None
+#             self.front+=1
+#         elif self.front==self.rear:
+#             print(f"{self.array[self.front]} is removed.")
+#             print("Queue is empty")
+#             self.front = -1
+#             self.rear = -1
+            
+
+#     def print_queue(self):
+#         return(self.array[self.front:self.rear+1])
+
+# q=Queue(5)
+
+# q.add_to_queue(10)
+# q.add_to_queue(20)
+# q.add_to_queue(30)
+# q.add_to_queue(40)
+# q.add_to_queue(50)
+# q.add_to_queue(60)
+# q.add_to_queue(70)
+# print(q.print_queue())
+# q.remove_element()
+# print(q.print_queue())
+# q.remove_element()
+# print(q.print_queue())
+# # q.add_to_queue(10)
+
+
+
 class Queue:
     def __init__(self,size):
         self.size = size
-        self.front=-1
-        self.rear=-1
-        self.array=[None] * size
-
-    def add_to_queue(self,val):
-        if self.rear == -1:
-            self.rear=0
-            self.front=0
-
-            self.array[self.rear] = val
-
-        elif self.rear + 1 < self.size:
-            self.rear+=1
-            self.array[self.rear] = val
-        else:
-            print("Queue is full")
-    
-    def remove_element(self):
-        if self.front == -1:
-            print("Queue is empty")
-        elif self.front < self.rear:
-            print(f"{self.array[self.front]} is removed.")
-            self.array[self.front] = None
-            self.front+=1
-        elif self.front==self.rear:
-            print(f"{self.array[self.front]} is removed.")
-            print("Queue is empty")
-            self.front = -1
-            self.rear = -1
-            
-
-    def print_queue(self):
-        return(self.array[self.front:self.rear+1])
-
-q=Queue(5)
-
-q.add_to_queue(10)
-q.add_to_queue(20)
-q.add_to_queue(30)
-q.add_to_queue(40)
-q.add_to_queue(50)
-q.add_to_queue(60)
-q.add_to_queue(70)
-print(q.print_queue())
-q.remove_element()
-print(q.print_queue())
-q.remove_element()
-print(q.print_queue())
-# q.add_to_queue(10)
+        self.array = [None] * size
+        self.front = -1
+        self.rear = -1
