@@ -17,7 +17,7 @@ def enqueue(val):
 
 def dequeue():
     global rear,front
-    if front == -1:
+    if front == -1 or rear==front:
         print("Queue is empty")
     else:
         print(f"{queue[front]} is dequeued")
@@ -33,13 +33,9 @@ enqueue(30)
 enqueue(40)
 enqueue(50)
 enqueue(50)
-print(queue)
-dequeue()
-dequeue()
 dequeue()
 print(queue)
-enqueue(1)
-enqueue(2)
-enqueue(3)
+enqueue(60)
 print(queue)
 
+print(front,rear)
