@@ -1,34 +1,27 @@
-array = [2,1,4,3,21,4,78,9,7,13,45]
+array = [23,11,43,29,13,4,56,79,25,7]
 
-def build_heap(array, size):
-    i= int (size//2)
-    while i >=0:
-        Heapify(array,i,size)
+def build_heap(array,size):
+    i = len(array) // 2
+    while i>=0:
+        heapify(array,size,i)
         i-=1
 
-def Heapify(array,i,size):
+def heapify(array,size,i):
 
-    left = 2*i + 1
-    right = 2*i + 2
+    left = 2*i+1
+    right = left + 1
 
     max = i
 
-    if left<=size and array[left] > array[max]:
+    if left <= size and array[left] > array[max]:
         max = left
     
-    if right<=size and array[right] > array[max]:
+    if right <=size and array[right] > array[max]:
         max = right
 
     if max!=i:
         array[max],array[i] = array[i],array[max]
-        Heapify(array,max,size)
-    
+        heapify(array,size,max)
+
 build_heap(array,len(array)-1)
 print(array)
-
-    
-
-
-
-
-    
