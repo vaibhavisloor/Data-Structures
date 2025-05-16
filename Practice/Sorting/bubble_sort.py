@@ -14,7 +14,5 @@ for i in range(len(arr)-1):
     if not swapped:
         break
 
-            
-
 print(arr)
     
