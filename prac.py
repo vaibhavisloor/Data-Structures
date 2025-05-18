@@ -540,9 +540,19 @@
 
 
 
-class Queue:
-    def __init__(self,size):
-        self.size = size
-        self.array = [None] * size
-        self.front = -1
-        self.rear = -1
+# class Queue:
+#     def __init__(self,size):
+#         self.size = size
+#         self.array = [None] * size
+#         self.front = -1
+#         self.rear = -1
+
+
+# dicty={
+#     'a':1,
+#     'b':2
+#     }
+# print(dicty.keys())
+
+# word="Vaibhav"
+# print(sorted(word))
